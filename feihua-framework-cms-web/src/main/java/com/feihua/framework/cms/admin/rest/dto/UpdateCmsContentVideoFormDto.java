@@ -1,10 +1,14 @@
 package com.feihua.framework.cms.admin.rest.dto;
 
+import com.feihua.framework.rest.dto.UpdateFormDto;
+
 /**
- * This class corresponds to the database table cms_content_vedio
+ * This class corresponds to the database table cms_content_video
  * 2018-12-07 09:19:31
 */
-public class AddCmsContentVedioFormDto {
+public class UpdateCmsContentVideoFormDto extends UpdateFormDto {
+
+    private String id;
 
     private String filename;
 
@@ -33,6 +37,7 @@ public class AddCmsContentVedioFormDto {
     private String performer;
 
     private String language;
+
     private String region;
 
     private Integer seasonCount;
@@ -114,6 +119,14 @@ public class AddCmsContentVedioFormDto {
 
     public void setSequence(Integer sequence) {
         this.sequence = sequence;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDuration() {

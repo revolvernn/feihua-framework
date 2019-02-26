@@ -1,8 +1,8 @@
 package com.feihua.framework.cms.impl;
 
-import com.feihua.framework.cms.api.ApiCmsContentVedioPoService;
-import com.feihua.framework.cms.dto.CmsContentVedioDto;
-import com.feihua.framework.cms.po.CmsContentVedioPo;
+import com.feihua.framework.cms.api.ApiCmsContentVideoPoService;
+import com.feihua.framework.cms.dto.CmsContentVideoDto;
+import com.feihua.framework.cms.po.CmsContentVideoPo;
 import feihua.jdbc.api.pojo.BasePo;
 import feihua.jdbc.api.service.impl.ApiBaseServiceImpl;
 import org.apache.commons.lang3.StringUtils;
@@ -14,30 +14,30 @@ import org.springframework.stereotype.Service;
  * @author yangwei 2018-12-13 14:46:05
  */
 @Service
-public class ApiCmsContentVedioPoServiceImpl extends ApiBaseServiceImpl<CmsContentVedioPo, CmsContentVedioDto, String> implements ApiCmsContentVedioPoService {
+public class ApiCmsContentVideoPoServiceImpl extends ApiBaseServiceImpl<CmsContentVideoPo, CmsContentVideoDto, String> implements ApiCmsContentVideoPoService {
     @Autowired
-    com.feihua.framework.cms.mapper.CmsContentVedioPoMapper CmsContentVedioPoMapper;
+    com.feihua.framework.cms.mapper.CmsContentVideoPoMapper CmsContentVideoPoMapper;
 
-    public ApiCmsContentVedioPoServiceImpl() {
-        super(CmsContentVedioDto.class);
+    public ApiCmsContentVideoPoServiceImpl() {
+        super(CmsContentVideoDto.class);
     }
 
     @Override
-    public CmsContentVedioPo selectBySiteIdAndContentId(String siteId, String contentId) {
+    public CmsContentVideoPo selectBySiteIdAndContentId(String siteId, String contentId) {
         if(StringUtils.isAnyEmpty(siteId,contentId)){
             return null;
         }
-        CmsContentVedioPo cmsContentVedioPo = new CmsContentVedioPo();
-        cmsContentVedioPo.setSiteId(siteId);
-        cmsContentVedioPo.setContentId(contentId);
-        cmsContentVedioPo.setDelFlag(BasePo.YesNo.N.name());
-        return selectOneSimple(cmsContentVedioPo);
+        CmsContentVideoPo cmsContentVideoPo = new CmsContentVideoPo();
+        cmsContentVideoPo.setSiteId(siteId);
+        cmsContentVideoPo.setContentId(contentId);
+        cmsContentVideoPo.setDelFlag(BasePo.YesNo.N.name());
+        return selectOneSimple(cmsContentVideoPo);
     }
 
     @Override
-    public CmsContentVedioDto wrapDto(CmsContentVedioPo po) {
+    public CmsContentVideoDto wrapDto(CmsContentVideoPo po) {
         if (po == null) { return null; }
-        CmsContentVedioDto dto = new CmsContentVedioDto();
+        CmsContentVideoDto dto = new CmsContentVideoDto();
         dto.setId(po.getId());
         dto.setSiteId(po.getSiteId());
         dto.setContentId(po.getContentId());

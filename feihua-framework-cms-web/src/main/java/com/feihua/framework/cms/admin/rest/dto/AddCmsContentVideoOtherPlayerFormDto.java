@@ -1,26 +1,14 @@
 package com.feihua.framework.cms.admin.rest.dto;
 
-import com.feihua.framework.rest.dto.UpdateFormDto;
-
 /**
- * This class corresponds to the database table cms_content_vedio_other_player
+ * This class corresponds to the database table cms_content_video_other_player
  * 2018-12-07 09:19:31
 */
-public class UpdateCmsContentVedioOtherPlayerFormDto extends UpdateFormDto {
-
-    private String id;
+public class AddCmsContentVideoOtherPlayerFormDto {
 
     private String player;
 
     private String url;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getPlayer() {
         return player;
